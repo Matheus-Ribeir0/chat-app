@@ -1,0 +1,17 @@
+.message{
+    display: inline-block; /* Alterado para display: inline-block */
+    background-color: #1b1a1d;
+    color: white;
+    margin: 16px;
+    border-radius: 5px 16px 16px 16px;
+    flex-direction: column-reverse; 
+    width: max-content;
+    max-width: 70%;
+    word-wrap:  break-word ;
+}
+
+.message p{
+    
+    padding: 0;
+    margin: 16px;
+}

@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react'
+import './App.css'
+import { Chat } from './components/Chat'
+import Form from './components/Form'
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
 
-export default App;
+  const [messages, setMessages] = useState([])
+
+  const setNovaMessagemEnviada = (menssagem) => {
+    setMessages([...messages, menssagem])
+    console.log(messages)
+  }
+
+  return (
+    <div className='background'>
+      <Chat listaMenssagens={messages}/>
+      <Form setNovaMessagemEnviada={menssagem => setNovaMessagemEnviada(menssagem)}/>
+    </div>
+  )
+}
+export default App
