@@ -8,18 +8,28 @@ const Form = (props) => {
     const [menssagem, setMenssagem] = useState('')
 
     const EnviarMenssagem = (event) => {
-        console.log(menssagem)
+        const mensagemSemEspaços = menssagem.trim()
+       if(mensagemSemEspaços !== '' && !/^\s+$/.test(mensagemSemEspaços)){
+            props.setNovaMessagemEnviada({
+                text: menssagem,
+                user: "Pedro"
+            })      
+            setMenssagem('')
+       }else{
+        setMenssagem('')
+       }
+    }
+    const PrevinirRecarregamento = (event) => {
         event.preventDefault()
-        props.setNovaMessagemEnviada({
-            text: menssagem,
-            user: "Pedro"
-        })
-      
+        if(menssagem !== ' '){
+            EnviarMenssagem(event)
+        }
+        
     }
     return (
         <div className='input-area'>
-            <form onSubmit={EnviarMenssagem} className='formulario'>
-                <InputChat aoAlterado={valor => setMenssagem(valor)} />
+            <form onSubmit={PrevinirRecarregamento} className='formulario'>
+                <InputChat valor={menssagem} enviar={EnviarMenssagem} aoAlterado={valor => setMenssagem(valor)} />
                 <button></button>
             </form >
         </div>
