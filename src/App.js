@@ -2,10 +2,14 @@ import { useState } from 'react'
 import './App.css'
 import { Chat } from './components/Chat'
 import Form from './components/Form'
+import { auth } from './firebaseConfig'
+import { SignIn, SignOut } from './components/Autentincation/Autenticantion'
+import { useAuthState } from 'react-firebase-hooks/auth'
+
 
 
 function App() {
-
+  const [user] = useAuthState(auth)
   const [messages, setMessages] = useState([])
 
   const setNovaMessagemEnviada = (menssagem) => {
@@ -15,8 +19,10 @@ function App() {
 
   return (
     <div className='background'>
-      <Chat listaMenssagens={messages}/>
+      <section>{user ? <Chat listaMenssagens={messages}/> : <SignIn/>}</section>
+      
       <Form setNovaMessagemEnviada={menssagem => setNovaMessagemEnviada(menssagem)}/>
+     <SignOut/>
     </div>
   )
 }
