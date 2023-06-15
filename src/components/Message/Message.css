@@ -1,17 +1,20 @@
 .message{
-    display: inline-block; /* Alterado para display: inline-block */
-    background-color: #1976D2;
-    color: white;
-    margin: 16px;
-    border-radius: 5px 16px 16px 16px;
-    flex-direction: column-reverse; 
-    width: max-content;
-    max-width: 70%;
-    word-wrap:  break-word ;
+    display: flex;
+    align-items: center;
 }
 
-.message p{
-    
-    padding: 0;
-    margin: 16px;
+.message img{
+    height: 50px;
+    border-radius: 50%;
 }
+.message p{
+        max-width: 500px;
+        margin-bottom: 12px;
+        line-height: 24px;
+        padding: 10px 20px;
+        border-radius: 25px;
+        position: relative;
+        color: white;
+        text-align: center;
+}
+/* 1976D2 */

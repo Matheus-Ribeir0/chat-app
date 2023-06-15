@@ -1,13 +1,26 @@
 .chat {
-    width: 50%;
-    height: 80%;
-    display: flex;  
-    justify-content: flex-end;
-    position: relative;
-    flex-direction: column;
-    margin: 16px auto;
+    padding: 10px;
+  height: 80vh;
+  width: 80%;
+  margin: 0 auto;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
     background-color: #1b1a1d;
 }
+
+.chat::-webkit-scrollbar {
+    width: 0.25rem;
+  }
+
+  .chat::-webkit-scrollbar-track {
+    background: #1e1e24;
+  }
+  
+  .chat::-webkit-scrollbar-thumb {
+    background: #6649b8;
+  }
+
 .messages-container {
     display: flex;
     flex-direction: column-reverse;
