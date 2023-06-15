@@ -10,10 +10,7 @@ const Form = (props) => {
     const EnviarMenssagem = (event) => {
         const mensagemSemEspaços = menssagem.trim()
        if(mensagemSemEspaços !== '' && !/^\s+$/.test(mensagemSemEspaços)){
-            props.setNovaMessagemEnviada({
-                text: menssagem,
-                user: "Pedro"
-            })      
+            props.sendMessage(menssagem)      
             setMenssagem('')
        }else{
         setMenssagem('')

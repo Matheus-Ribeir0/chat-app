@@ -12,7 +12,7 @@ function App() {
   const [user] = useAuthState(auth)
   const [messages, setMessages] = useState([])
 
-  const setNovaMessagemEnviada = (menssagem) => {
+  const sendMessage = (menssagem) => {
     setMessages([...messages, menssagem])
     console.log(messages)
   }
@@ -21,7 +21,7 @@ function App() {
     <div className='background'>
       <section>{user ? <Chat listaMenssagens={messages}/> : <SignIn/>}</section>
       
-      <Form setNovaMessagemEnviada={menssagem => setNovaMessagemEnviada(menssagem)}/>
+      <Form sendMessage={menssagem => sendMessage(menssagem)}/>
      <SignOut/>
     </div>
   )
