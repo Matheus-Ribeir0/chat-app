@@ -1,17 +1,30 @@
-.message-list{
-    display: flex;
-    align-items: end;
+.message{
+   display: block;
+   
 }
 
-.message img{
+.message-group{
+    display: flex;
+    align-items: end;
+    transition: 5s ease;
+    margin: 12px 0;
+}
+.image-section{
+    display: block;
+}
+
+.user-image{
     height: 43px;
     border-radius: 50%;
-    margin: 12px 5px; 
+    margin: 7px 10px; 
 }
+
+
 .message-text{
+    
     background: #232232;
         max-width: 500px;
-        margin-bottom: 12px;
+        margin: 7px;
         line-height: 24px;
         padding: 10px 20px;
         border-radius: 10px;
@@ -21,4 +34,5 @@
         word-wrap: break-word;
         text-align: left;
 }
+
 /* 1976D2 */
