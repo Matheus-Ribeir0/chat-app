@@ -14,7 +14,7 @@ export const Chat = (props) => {
 
     const dummy = useRef()
     const messageRef = collection(databaseApp, "messages")
-    const QueryMessages = query(messageRef, orderBy("createdAt", "asc"),limit(25))
+    const QueryMessages = query(messageRef, orderBy("createdAt", "asc"),limit(35))
 
     
 //faz uma querry para organizar as menssagens por ordem de envio
