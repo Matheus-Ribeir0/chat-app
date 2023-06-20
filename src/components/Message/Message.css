@@ -1,20 +1,24 @@
-.message{
+.message-list{
     display: flex;
-    align-items: center;
+    align-items: end;
 }
 
 .message img{
-    height: 50px;
+    height: 43px;
     border-radius: 50%;
+    margin: 12px 5px; 
 }
-.message p{
+.message-text{
+    background: #232232;
         max-width: 500px;
         margin-bottom: 12px;
         line-height: 24px;
         padding: 10px 20px;
-        border-radius: 25px;
+        border-radius: 10px;
         position: relative;
         color: white;
         text-align: center;
+        word-wrap: break-word;
+        text-align: left;
 }
 /* 1976D2 */
